@@ -1,0 +1,19 @@
+{
+  "name": "pawloft_website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix pawloft-next\" \"npm start --prefix server\"",
+    "legacy-client": "npm run dev --prefix client",
+    "next": "npm run dev --prefix pawloft-next",
+    "server": "npm start --prefix server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

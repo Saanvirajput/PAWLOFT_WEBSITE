@@ -1,0 +1,199 @@
+.hero-section {
+    padding: 120px 0;
+    background: var(--bg-ivory);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    z-index: 1;
+}
+
+.hero-content {
+    flex: 1.2;
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: 4.5rem;
+    line-height: 1.1;
+    color: var(--primary);
+    margin-bottom: 32px;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 500px;
+    line-height: 1.8;
+}
+
+.hero-image-wrapper {
+    flex: 0.8;
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 200px 200px 0 0;
+    /* Vantara-style architectural arch */
+    object-fit: cover;
+    box-shadow: var(--shadow-premium);
+}
+
+/* Stats Section with sophisticated feel */
+.stats-section {
+    padding: 100px 0;
+    background: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    color: var(--secondary);
+    margin-bottom: 8px;
+}
+
+.stat-item p {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* Problem Section - Elegant Cards */
+.problem-card {
+    padding: 60px 40px;
+    background: var(--bg-ivory);
+    border: none;
+    border-radius: 4px;
+    transition: transform 0.4s ease;
+}
+
+.problem-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    margin-bottom: 16px;
+    color: var(--primary);
+}
+
+/* Section Titles */
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+/* How It Works - Institutional numbering */
+.how-card {
+    position: relative;
+    padding: 40px;
+    background: transparent;
+    border-left: 1px solid rgba(26, 60, 52, 0.1);
+}
+
+.how-card::before {
+    content: attr(data-number);
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    color: var(--secondary);
+    opacity: 0.2;
+}
+
+/* Story Section - Editorial Layout */
+.story-section {
+    background: var(--primary);
+    color: #FDF8F0;
+    padding: 140px 0;
+}
+
+.story-section h2 {
+    color: #FDF8F0;
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.story-img-main {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.story-text-premium {
+    padding-right: 60px;
+}
+
+.story-text-premium h3 {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    color: var(--secondary);
+}
+
+/* CTA */
+.cta-section {
+    background: #FDF8F0;
+    padding: 120px 0;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    color: var(--primary);
+    max-width: 800px;
+    margin: 0 auto 48px;
+}
+
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        margin: 0 auto 32px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .story-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}

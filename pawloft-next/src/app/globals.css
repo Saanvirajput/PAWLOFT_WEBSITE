@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Vantara-Inspired Palette */
+  --primary: #1A3C34;
+  /* Deep Forest Green */
+  --primary-dark: #0F2A24;
+  --secondary: #A67C52;
+  /* Earthy Tan/Bronze */
+  --bg-ivory: #FDF8F0;
+  /* Warm Ivory Canvas */
+  --bg-card: #FFFFFF;
+  --text-main: #2D2926;
+  /* Soft Charcoal */
+  --text-light: #5B5A58;
+  /* Muted Slate */
+  --accent-gold: #D4AF37;
+  --shadow-premium: 0 10px 40px rgba(26, 60, 52, 0.05);
+  --radius-lg: 32px;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-ivory);
+  color: var(--text-main);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+.serif {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.container {
+  max-width: 1400px;
+  /* Slightly wider for premium feel */
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.vertical-label {
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--secondary);
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 4px;
+  /* More institutional/architectural than fully rounded */
+  font-weight: 500;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-sans);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(26, 60, 52, 0.2);
+}
+
+.btn-outline {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.card-premium {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  box-shadow: var(--shadow-premium);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.section-premium {
+  padding: 120px 0;
+  /* More generous spacing */
+}

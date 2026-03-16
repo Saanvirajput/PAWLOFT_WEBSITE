@@ -1,0 +1,107 @@
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    background-color: var(--bg-ivory);
+}
+
+.auth-card {
+    background: white;
+    padding: 60px;
+    border-radius: 4px;
+    /* Institutional/Architectural feel */
+    box-shadow: var(--shadow-premium);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(26, 60, 52, 0.05);
+}
+
+.auth-card h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    margin-bottom: 32px;
+    color: var(--primary);
+}
+
+.auth-subtitle {
+    color: var(--text-light);
+    margin-bottom: 48px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.auth-quote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--secondary);
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+    opacity: 0.9;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid rgba(26, 60, 52, 0.1);
+    border-radius: 2px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fcfcfc;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(26, 60, 52, 0.03);
+}
+
+.btn-block {
+    width: 100%;
+    margin-top: 24px;
+    padding: 18px !important;
+}
+
+.auth-footer {
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.auth-footer a {
+    color: var(--secondary);
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 8px;
+}
+
+.error-msg {
+    background-color: #fff1f0;
+    color: #a8201a;
+    padding: 12px;
+    border-radius: 2px;
+    margin-bottom: 32px;
+    font-size: 0.85rem;
+    border-left: 4px solid #a8201a;
+}
