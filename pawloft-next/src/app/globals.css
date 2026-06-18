@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-cream: #FDFBF7; /* Vantara warm cream */
+  --color-bg-cream: #FDFBF7; /* Warm cream */
   --color-bg-beige: #EFECE5; /* Soft beige for cards */
   --color-teal-dark: #8B2E49; /* Deep Teal as requested */
   --color-teal-hover: #6E2238;

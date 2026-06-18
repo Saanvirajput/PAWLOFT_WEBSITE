@@ -6,7 +6,7 @@ Welcome to the **PAWLOFT** repository! This platform is an elite, high-utility r
 
 The project has recently undergone a major architectural and aesthetic overhaul to position it as a world-class institutional rescue system.
 
-- **Frontend (pawloft-next/)**: Built with Next.js 16 (App Router), React, and Tailwind CSS. The UI features a "Compassionate Luxury" Vantara-inspired aesthetic, utilizing an Ivory, Dark Pink, and Deep Teal color palette with serif typography (`var(--font-serif)`).
+- **Frontend (pawloft-next/)**: Built with Next.js 16 (App Router), React, and Tailwind CSS. The UI features a "Compassionate Luxury" aesthetic, utilizing an Ivory, Dark Pink, and Deep Teal color palette with serif typography (`var(--font-serif)`).
 - **Backend (Supabase)**: We have migrated critical rescue infrastructure to Supabase (PostgreSQL), utilizing PostGIS for spatial data and Row Level Security (RLS) for data integrity.
 - **Legacy Systems**: 
   - `client/`: The initial React/Vite MVP frontend.

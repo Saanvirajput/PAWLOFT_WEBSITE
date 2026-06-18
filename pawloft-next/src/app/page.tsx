@@ -107,7 +107,7 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* SECTION 2: THE REALITY (Vantara Cream + Beige Cards) */}
+      {/* SECTION 2: THE REALITY (Cream + Beige Cards) */}
       <section className="py-32 relative z-20 bg-[#FDFBF7]">
         <div className="container mx-auto px-6 lg:px-16">
           <div className="mb-20">

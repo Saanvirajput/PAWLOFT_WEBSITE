@@ -100,7 +100,7 @@ export default function HowItWorksContent() {
               <Link href="/report" className="btn-pill">
                 Report An Animal
               </Link>
-              <Link href="/signup" className="btn-pill bg-transparent border border-[#8B2E49] text-[#8B2E49] hover:bg-[#8B2E49] hover:text-white">
+              <Link href="/login" className="btn-pill bg-transparent border border-[#8B2E49] text-[#8B2E49] hover:bg-[#8B2E49] hover:text-white">
                 Become a Volunteer
               </Link>
             </div>
