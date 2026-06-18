@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PawLoft - Every Paw Deserves a Safe Place",
-  description: "Connecting rescuers, shelters, and adopters to save animals.",
+  title: "Pawloft - Emergency Response Infrastructure",
+  description: "Pawloft is building India's first technology-driven rescue coordination network for animals.",
 };
 
 export default function RootLayout({

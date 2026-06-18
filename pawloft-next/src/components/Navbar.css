@@ -1,12 +1,12 @@
 .navbar {
-    background-color: rgba(240, 253, 250, 0.95);
-    backdrop-filter: blur(8px);
+    background-color: rgba(11, 15, 20, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(15, 23, 42, 0.1);
-    box-shadow: none;
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 .navbar .container {
@@ -21,13 +21,13 @@
     gap: 10px;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--text-main);
+    color: var(--text-primary);
     letter-spacing: -0.5px;
     text-decoration: none;
 }
 
 .logo-icon {
-    color: var(--secondary);
+    color: var(--primary-accent);
 }
 
 .nav-links {
@@ -38,17 +38,22 @@
 
 .nav-links a {
     font-weight: 500;
-    color: var(--text-main);
+    color: var(--text-secondary);
     text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--primary);
+    color: var(--text-primary);
+}
+
+.nav-links .btn {
+    color: var(--text-primary);
 }
 
 @media (max-width: 768px) {
     .nav-links {
         display: none;
-        /* For simplicity, hiding links on mobile in this basic migration */
     }
 }

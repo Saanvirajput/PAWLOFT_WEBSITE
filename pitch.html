@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pawloft — Pitch Booklet</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0d0b;
+    --parchment: #faf8f3;
+    --warm-white: #fff9f2;
+    --amber: #e07a1f;
+    --amber-light: #f5a44a;
+    --amber-pale: #fff3e0;
+    --teal: #1a6b5c;
+    --teal-light: #2d9e84;
+    --teal-pale: #e8f5f1;
+    --red: #c0392b;
+    --muted: #6b6560;
+    --border: rgba(14,13,11,0.12);
+    --border-heavy: rgba(14,13,11,0.25);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--parchment);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ─── NAVIGATION ─── */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250,248,243,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span { color: var(--amber); }
+
+  .nav-links {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 0.35rem 0.7rem;
+    border-radius: 20px;
+    transition: all 0.2s;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links a:hover { background: var(--amber-pale); color: var(--amber); }
+
+  /* ─── SECTIONS ─── */
+  section { scroll-margin-top: 56px; }
+
+  /* ─── COVER ─── */
+  .cover {
+    min-height: 100vh;
+    background: var(--ink);
+    color: var(--warm-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-left {
+    padding: 10rem 4rem 6rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cover-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--amber-light);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 6vw, 6rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  .cover-title .highlight { color: var(--amber-light); }
+
+  .cover-tagline {
+    font-size: 1.1rem;
+    color: rgba(255,249,242,0.65);
+    max-width: 380px;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 1.5rem;
+  }
+
+  .cover-meta-item label {
+    display: block;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,249,242,0.45);
+    margin-bottom: 0.3rem;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .cover-meta-item span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255,249,242,0.85);
+  }
+
+  .cover-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.03);
+    border-left: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .cover-visual {
+    position: relative;
+    width: 320px;
+    height: 320px;
+  }
+
+  .paw-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(224,122,31,0.3);
+    animation: pulse-ring 3s ease-in-out infinite;
+  }
+
+  .paw-ring:nth-child(1) { width: 320px; height: 320px; top: 0; left: 0; animation-delay: 0s; }
+  .paw-ring:nth-child(2) { width: 240px; height: 240px; top: 40px; left: 40px; animation-delay: 0.6s; }
+  .paw-ring:nth-child(3) { width: 160px; height: 160px; top: 80px; left: 80px; animation-delay: 1.2s; border-color: rgba(224,122,31,0.6); }
+
+  @keyframes pulse-ring {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.04); opacity: 0.9; }
+  }
+
+  .paw-center {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;
+    z-index: 2;
+  }
+
+  .cover-stat-pills {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+  }
+
+  .stat-pill {
+    position: absolute;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.78rem;
+    color: rgba(255,249,242,0.7);
+    white-space: nowrap;
+  }
+
+  .stat-pill strong { color: var(--amber-light); font-weight: 600; }
+  .stat-pill:nth-child(1) { top: 15%; left: -20px; }
+  .stat-pill:nth-child(2) { top: 35%; right: -10px; }
+  .stat-pill:nth-child(3) { bottom: 25%; left: 0; }
+  .stat-pill:nth-child(4) { bottom: 12%; right: 20px; }
+
+  .cover-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: radial-gradient(circle, #e07a1f 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* ─── SECTION WRAPPER ─── */
+  .section-wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+  }
+
+  .section-wrap.narrow { max-width: 800px; }
+
+  /* ─── LABELS ─── */
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  /* ─── HEADINGS ─── */
+  .h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+  }
+
+  .h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 680px;
+    margin-bottom: 3rem;
+  }
+
+  /* ─── DIVIDERS ─── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 4rem 0;
+  }
+
+  /* ─── PROBLEM SECTION ─── */
+  .problem-bg {
+    background: var(--ink);
+    color: var(--warm-white);
+  }
+
+  .problem-bg .section-label { color: var(--amber-light); }
+  .problem-bg .lead { color: rgba(255,249,242,0.6); }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    margin: 3rem 0;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .stat-box {
+    background: rgba(255,255,255,0.03);
+    padding: 2.5rem 2rem;
+    transition: background 0.2s;
+  }
+
+  .stat-box:hover { background: rgba(255,255,255,0.06); }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: var(--amber-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-desc {
+    font-size: 0.88rem;
+    color: rgba(255,249,242,0.5);
+    line-height: 1.5;
+  }
+
+  .chaos-list {
+    list-style: none;
+    margin-top: 2rem;
+  }
+
+  .chaos-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    color: rgba(255,249,242,0.7);
+    font-size: 0.95rem;
+  }
+
+  .chaos-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(192,57,43,0.2);
+    border: 1px solid rgba(192,57,43,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    color: #e06060;
+  }
+
+  /* ─── WHAT IS IT ─── */
+  .what-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 2rem;
+  }
+
+  .is-not-list, .is-list {
+    list-style: none;
+  }
+
+  .is-not-list li, .is-list li {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.7rem 0;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+
+  .tag-no {
+    color: var(--red);
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .tag-yes {
+    color: var(--teal);
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .definition-box {
+    background: var(--amber-pale);
+    border-left: 3px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+
+  /* ─── PIPELINE ─── */
+  .pipeline {
+    position: relative;
+    margin: 3rem 0;
+  }
+
+  .pipeline-line {
+    position: absolute;
+    left: 31px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--amber), var(--teal));
+    opacity: 0.3;
+  }
+
+  .pipeline-step {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    position: relative;
+  }
+
+  .step-badge {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: var(--ink);
+    color: var(--warm-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    gap: 2px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .step-badge .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--amber-light);
+  }
+
+  .step-content { padding-top: 0.75rem; }
+
+  .step-content p {
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-top: 0.35rem;
+  }
+
+  .step-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .tag-critical { background: rgba(192,57,43,0.1); color: var(--red); border: 1px solid rgba(192,57,43,0.2); }
+  .tag-auto { background: var(--teal-pale); color: var(--teal); border: 1px solid rgba(26,107,92,0.2); }
+  .tag-trust { background: var(--amber-pale); color: var(--amber); border: 1px solid rgba(224,122,31,0.2); }
+
+  /* ─── TECH STACK ─── */
+  .tech-bg {
+    background: #0a0f1a;
+    color: var(--warm-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tech-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(26,107,92,0.15) 0%, transparent 60%);
+  }
+
+  .tech-bg .section-label { color: var(--teal-light); }
+
+  .tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+
+  .tech-col {
+    background: rgba(255,255,255,0.02);
+    padding: 1.75rem 1.5rem;
+  }
+
+  .tech-col-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 1.25rem;
+  }
+
+  .tech-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0;
+    font-size: 0.85rem;
+    color: rgba(255,249,242,0.75);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .tech-chip:last-child { border: none; }
+
+  .tech-chip-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal-light);
+    flex-shrink: 0;
+  }
+
+  .tech-chip-dot.amber { background: var(--amber-light); }
+  .tech-chip-dot.blue { background: #5b8fff; }
+  .tech-chip-dot.pink { background: #e06b8e; }
+
+  .arch-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .arch-layer-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,249,242,0.4);
+    text-align: right;
+  }
+
+  .arch-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .arch-chip {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    color: rgba(255,249,242,0.8);
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ─── AI FEATURES ─── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .feature-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .feature-card.amber::before { background: var(--amber); }
+  .feature-card.teal::before { background: var(--teal-light); }
+  .feature-card.blue::before { background: #5b8fff; }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .feature-icon.amber { background: var(--amber-pale); }
+  .feature-icon.teal { background: var(--teal-pale); }
+  .feature-icon.blue { background: #eef2ff; }
+
+  .feature-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  .feature-body {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .feature-impact {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: var(--amber);
+    text-transform: uppercase;
+  }
+
+  /* ─── VOLUNTEER SYSTEM ─── */
+  .volunteer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .tier-card {
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    background: var(--warm-white);
+  }
+
+  .tier-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .tier-badge.one { background: var(--amber-pale); color: var(--amber); }
+  .tier-badge.two { background: var(--teal-pale); color: var(--teal); }
+
+  .capability-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+
+  .cap-tag {
+    background: var(--parchment);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .status-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .status-chip {
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .status-chip .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .status-chip.avail { background: #dcfce7; color: #15803d; }
+  .status-chip.avail .dot { background: #15803d; }
+  .status-chip.emerg { background: #fff7ed; color: #c2410c; }
+  .status-chip.emerg .dot { background: #c2410c; }
+  .status-chip.busy { background: #fef9c3; color: #854d0e; }
+  .status-chip.busy .dot { background: #854d0e; }
+  .status-chip.offline { background: var(--parchment); color: var(--muted); }
+  .status-chip.offline .dot { background: var(--muted); }
+
+  /* ─── ANIMAL ROUTING ─── */
+  .routing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+  }
+
+  .routing-table th {
+    text-align: left;
+    padding: 0.85rem 1rem;
+    background: var(--ink);
+    color: var(--warm-white);
+    font-size: 0.72rem;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .routing-table th:first-child { border-radius: 12px 0 0 12px; }
+  .routing-table th:last-child { border-radius: 0 12px 12px 0; }
+
+  .routing-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .routing-table tr:last-child td { border-bottom: none; }
+  .routing-table tr:hover td { background: var(--amber-pale); }
+
+  .route-animal {
+    font-weight: 600;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .route-to {
+    color: var(--teal);
+    font-weight: 500;
+  }
+
+  .route-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+
+  /* ─── FINANCIAL MODEL ─── */
+  .fin-bg {
+    background: #f7f3ee;
+  }
+
+  .fund-caps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .fund-cap-card {
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .fund-cap-card.low { background: #e8f5f1; border: 1px solid rgba(26,107,92,0.2); }
+  .fund-cap-card.med { background: var(--amber-pale); border: 1px solid rgba(224,122,31,0.2); }
+  .fund-cap-card.crit { background: #fee2e2; border: 1px solid rgba(192,57,43,0.2); }
+
+  .fund-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.3rem;
+  }
+
+  .fund-cap-card.low .fund-amount { color: var(--teal); }
+  .fund-cap-card.med .fund-amount { color: var(--amber); }
+  .fund-cap-card.crit .fund-amount { color: var(--red); }
+
+  .fund-label { font-size: 0.82rem; color: var(--muted); }
+  .fund-sub { font-size: 0.75rem; color: var(--muted); margin-top: 0.5rem; font-style: italic; }
+
+  .revenue-streams {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .revenue-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem;
+  }
+
+  .rev-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--amber);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+  }
+
+  .rev-label { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; }
+  .rev-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+  /* ─── ROADMAP ─── */
+  .road-bg { background: var(--ink); color: var(--warm-white); }
+  .road-bg .section-label { color: var(--amber-light); }
+
+  .roadmap-phases {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    margin: 2rem 0;
+  }
+
+  .phase {
+    background: rgba(255,255,255,0.02);
+    padding: 2rem 1.5rem;
+  }
+
+  .phase-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber-light);
+    margin-bottom: 0.75rem;
+  }
+
+  .phase-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--warm-white);
+  }
+
+  .phase-items {
+    list-style: none;
+  }
+
+  .phase-items li {
+    font-size: 0.82rem;
+    color: rgba(255,249,242,0.6);
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    line-height: 1.4;
+  }
+
+  .phase-items li::before {
+    content: '→';
+    color: var(--amber-light);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ─── VISION OS ─── */
+  .vision-bg {
+    background: linear-gradient(135deg, #0a1628 0%, #0e1a10 50%, #1a0e00 100%);
+    color: var(--warm-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vision-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 40%, rgba(224,122,31,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 70%, rgba(26,107,92,0.12) 0%, transparent 50%);
+  }
+
+  .vision-bg .section-label { color: var(--amber-light); }
+
+  .vision-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .pillar-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 2rem;
+  }
+
+  .pillar-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: rgba(224,122,31,0.3);
+    margin-bottom: 0.5rem;
+  }
+
+  .pillar-title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: rgba(255,249,242,0.9);
+    margin-bottom: 0.75rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.85rem;
+    color: rgba(255,249,242,0.5);
+    line-height: 1.6;
+  }
+
+  /* ─── WHY NOW ─── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .why-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .why-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  /* ─── FOUNDER ─── */
+  .founder-section {
+    background: var(--ink);
+    color: var(--warm-white);
+  }
+
+  .founder-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 3rem;
+    margin: 2rem 0;
+  }
+
+  .founder-avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 20px;
+    background: var(--amber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .founder-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .founder-title {
+    font-size: 0.85rem;
+    color: var(--amber-light);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .founder-bio {
+    font-size: 0.95rem;
+    color: rgba(255,249,242,0.65);
+    line-height: 1.7;
+  }
+
+  /* ─── CLOSING ─── */
+  .closing {
+    background: var(--amber);
+    color: var(--ink);
+    text-align: center;
+    padding: 8rem 2rem;
+  }
+
+  .closing .h1 { color: var(--ink); margin-bottom: 1rem; }
+  .closing .lead { color: rgba(14,13,11,0.7); margin: 0 auto 2.5rem; }
+
+  .closing-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--ink);
+    color: var(--warm-white);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+  }
+
+  .closing-cta:hover { opacity: 0.85; }
+
+  /* ─── PRINT ─── */
+  @media print {
+    .nav { display: none; }
+    section { page-break-inside: avoid; }
+  }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">Paw<span>loft</span></div>
+  <ul class="nav-links">
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#what">Product</a></li>
+    <li><a href="#pipeline">Pipeline</a></li>
+    <li><a href="#tech">Tech</a></li>
+    <li><a href="#ai">AI Layer</a></li>
+    <li><a href="#volunteers">Volunteers</a></li>
+    <li><a href="#financials">Revenue</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#vision">Vision</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ COVER ═══ -->
+<section class="cover" id="cover">
+  <div class="cover-pattern"></div>
+  <div class="cover-left">
+    <div>
+      <div class="cover-eyebrow">Rescue-tech · India · 2024</div>
+      <div class="cover-title">
+        Paw<span class="highlight">loft</span>
+      </div>
+      <p class="cover-tagline">
+        The structured rescue coordination and alert platform that closes the gap between an injured animal's cry for help and the people who can answer it.
+      </p>
+    </div>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <label>Founder</label>
+        <span>Saanvi Rajput</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>Category</label>
+        <span>Rescue-tech / Social Impact</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>Model</label>
+        <span>Data + Intelligence SaaS</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>Market</label>
+        <span>Consumer Mass Market</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-right">
+    <div class="cover-stat-pills">
+      <div class="stat-pill"><strong>30M+</strong> stray dogs in India</div>
+      <div class="stat-pill"><strong>8 min</strong> critical rescue window</div>
+      <div class="stat-pill"><strong>5km</strong> geo-matched alerts</div>
+      <div class="stat-pill"><strong>0</strong> structured rescue OS exists today</div>
+    </div>
+    <div class="cover-visual">
+      <div class="paw-ring"></div>
+      <div class="paw-ring"></div>
+      <div class="paw-ring"></div>
+      <div class="paw-center">🐾</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROBLEM ═══ -->
+<section id="problem" class="problem-bg">
+  <div class="section-wrap">
+    <div class="section-label reveal">01 — The Problem</div>
+    <h1 class="h1 reveal" style="color: var(--warm-white);">Every rescue starts in chaos.</h1>
+    <p class="lead reveal">Someone sees an injured dog on the road. They want to help. And then: nothing. No clear number to call. No system. No coordination. Just WhatsApp groups, dead lines, and an animal that keeps waiting.</p>
+
+    <div class="stat-grid reveal">
+      <div class="stat-box">
+        <div class="stat-number">30M+</div>
+        <div class="stat-desc">Stray dogs in India — the highest concentration of street dogs in the world</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">62%</div>
+        <div class="stat-desc">Of rescue attempts fail before a responder physically reaches the animal</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">∞</div>
+        <div class="stat-desc">NGO contacts scattered across unstructured WhatsApp groups with no tracking, no accountability</div>
+      </div>
+    </div>
+
+    <ul class="chaos-list reveal">
+      <li>
+        <div class="chaos-icon">✕</div>
+        <div><strong style="color: rgba(255,249,242,0.9);">No structured alert system.</strong> NGOs are overwhelmed and rescue contacts live in fragmented WhatsApp groups. Response times are unpredictable and slow.</div>
+      </li>
+      <li>
+        <div class="chaos-icon">✕</div>
+        <div><strong style="color: rgba(255,249,242,0.9);">No case accountability.</strong> Once a rescue is "handed off," there's zero tracking. Animals fall through the cracks with no documentation, no proof, no follow-up.</div>
+      </li>
+      <li>
+        <div class="chaos-icon">✕</div>
+        <div><strong style="color: rgba(255,249,242,0.9);">No trust layer for donations.</strong> The ecosystem has been burned by fake rescue fundraisers. Donors have no visibility into where money actually goes.</div>
+      </li>
+      <li>
+        <div class="chaos-icon">✕</div>
+        <div><strong style="color: rgba(255,249,242,0.9);">No intelligence for governments.</strong> Municipal corporations and state authorities have animal welfare mandates but zero data systems to execute or prove compliance.</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ WHAT IS IT ═══ -->
+<section id="what" style="background: var(--parchment);">
+  <div class="section-wrap">
+    <div class="section-label reveal">02 — What Pawloft Is</div>
+    <h1 class="h1 reveal">An emergency dispatch system — for animals.</h1>
+
+    <div class="definition-box reveal">
+      Pawloft is a structured rescue coordination and alert platform — the connective tissue between the person who spots an injured animal and the verified network of people who can actually help it. Not a charity. Not a social media page. Emergency dispatch, powered by community.
+    </div>
+
+    <div class="what-grid reveal">
+      <div>
+        <h3 class="h3" style="color: var(--red); margin-bottom: 1rem;">Pawloft is NOT</h3>
+        <ul class="is-not-list">
+          <li><span class="tag-no">✕</span> A pet-selling platform</li>
+          <li><span class="tag-no">✕</span> A breeder marketplace</li>
+          <li><span class="tag-no">✕</span> Guaranteed rescue assurance</li>
+          <li><span class="tag-no">✕</span> Guaranteed treatment funding</li>
+          <li><span class="tag-no">✕</span> A wildlife authority</li>
+          <li><span class="tag-no">✕</span> A replacement for veterinary advice</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="h3" style="color: var(--teal); margin-bottom: 1rem;">Pawloft IS</h3>
+        <ul class="is-list">
+          <li><span class="tag-yes">✓</span> A proof-based rescue coordination pipeline</li>
+          <li><span class="tag-yes">✓</span> A geo-intelligent volunteer alert network</li>
+          <li><span class="tag-yes">✓</span> A transparent, auditable donation system</li>
+          <li><span class="tag-yes">✓</span> A live animal welfare data platform</li>
+          <li><span class="tag-yes">✓</span> A structured NGO and vet partner directory</li>
+          <li><span class="tag-yes">✓</span> A government-ready compliance intelligence layer</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PIPELINE ═══ -->
+<section id="pipeline" style="background: var(--warm-white);">
+  <div class="section-wrap narrow">
+    <div class="section-label reveal">03 — The Rescue Pipeline</div>
+    <h1 class="h1 reveal">Report → Verify → Alert → Coordinate → Close with proof.</h1>
+    <p class="lead reveal">Every rescue flows through a defined, accountable pipeline. No case can fall through the cracks.</p>
+
+    <div class="pipeline reveal">
+      <div class="pipeline-line"></div>
+
+      <div class="pipeline-step">
+        <div class="step-badge"><span class="step-num">1</span><span>Report</span></div>
+        <div class="step-content">
+          <h3 class="h3">Public Report — Under 60 seconds</h3>
+          <p>Anyone can file a report. Required inputs: photo or video (mandatory), GPS location, animal type, condition description, and OTP-verified phone number. The proof and OTP requirements exist specifically to deter fake reports, which erode trust and waste responder energy.</p>
+          <span class="step-tag tag-trust">Anti-fake protection</span>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="step-badge"><span class="step-num">2</span><span>Triage</span></div>
+        <div class="step-content">
+          <h3 class="h3">AI Visual Triage + Case Categorisation</h3>
+          <p>The uploaded photo or video is analyzed by a multimodal AI model. Species, injury type, severity, approachability, and safe handling guidance are returned in under 3 seconds. Standard domestic animals trigger immediate alerts. Wildlife, snakes, aggressive animals, or legally sensitive cases are held for admin review — because sending an untrained volunteer toward a cobra is dangerous, not helpful.</p>
+          <span class="step-tag tag-auto">AI-powered · Admin review for wildlife</span>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="step-badge"><span class="step-num">3</span><span>Alert</span></div>
+        <div class="step-content">
+          <h3 class="h3">Geo-Based Alert — 5km Radius Expansion</h3>
+          <p>Pawloft alerts verified volunteers and NGOs within a 5km radius via WhatsApp (SMS as fallback). If nobody accepts within the time window, the radius automatically expands to 10km and escalation begins. If the case still stalls, a Pawloft admin manually takes over. No case simply falls through the cracks.</p>
+          <span class="step-tag tag-auto">Auto-escalation · PostGIS powered</span>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="step-badge"><span class="step-num">4</span><span>Respond</span></div>
+        <div class="step-content">
+          <h3 class="h3">Primary Responder + Backup Support Model</h3>
+          <p>The first qualified person to accept becomes the Primary Responder. Others can join as Backup Support. If the primary responder needs more hands — say, an injured bull — they call for backup and the radius expansion restarts. This model prevents a rescue from failing just because one person is overwhelmed.</p>
+          <span class="step-tag tag-critical">Volunteer privacy protected until acceptance</span>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="step-badge"><span class="step-num">5</span><span>Track</span></div>
+        <div class="step-content">
+          <h3 class="h3">Live Case Tracking + Live Relay Mode</h3>
+          <p>Every case moves through defined statuses: Alert Sent → Responder On The Way → Reached Location → Shifted to Vet → Closed. Reporters get real-time updates. A structured live relay keeps the reporter as the eyes of the responder in transit — dramatically reducing the "arrived at empty location" failure that demoralizes volunteers.</p>
+          <span class="step-tag tag-auto">WebSocket-powered live relay</span>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="step-badge"><span class="step-num">6</span><span>Close</span></div>
+        <div class="step-content">
+          <h3 class="h3">Proof-Based Closure — Accountability by Default</h3>
+          <p>A case cannot be marked closed without uploading a final photo or video, a condition summary, and (if treatment happened) a prescription or bill. This single requirement is what makes Pawloft accountable — it's not just about getting someone to show up. It's about documenting that the animal actually received help.</p>
+          <span class="step-tag tag-trust">Tamper-evident · Donor-visible</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TECH STACK ═══ -->
+<section id="tech" class="tech-bg">
+  <div class="section-wrap">
+    <div class="section-label reveal">04 — Technology Architecture</div>
+    <h1 class="h1 reveal" style="color: var(--warm-white);">6-layer system architecture built for scale.</h1>
+    <p class="lead reveal" style="color: rgba(255,249,242,0.6);">Every layer exists to serve one moment: the 8-minute window between when someone spots an injured animal and when a volunteer arrives.</p>
+
+    <div class="tech-stack-grid reveal">
+      <div class="tech-col">
+        <div class="tech-col-title">Frontend</div>
+        <div class="tech-chip"><div class="tech-chip-dot blue"></div>React PWA</div>
+        <div class="tech-chip"><div class="tech-chip-dot blue"></div>Progressive Web App</div>
+        <div class="tech-chip"><div class="tech-chip-dot blue"></div>TypeScript</div>
+        <div class="tech-chip"><div class="tech-chip-dot blue"></div>Tailwind CSS</div>
+        <div class="tech-chip"><div class="tech-chip-dot blue"></div>React Query</div>
+        <div class="tech-chip"><div class="tech-chip-dot blue"></div>Mapbox GL</div>
+      </div>
+      <div class="tech-col">
+        <div class="tech-col-title">Backend</div>
+        <div class="tech-chip"><div class="tech-chip-dot amber"></div>Node.js + Express</div>
+        <div class="tech-chip"><div class="tech-chip-dot amber"></div>WebSocket (Socket.io)</div>
+        <div class="tech-chip"><div class="tech-chip-dot amber"></div>REST API</div>
+        <div class="tech-chip"><div class="tech-chip-dot amber"></div>Bull (Job Queues)</div>
+        <div class="tech-chip"><div class="tech-chip-dot amber"></div>JWT Auth</div>
+        <div class="tech-chip"><div class="tech-chip-dot amber"></div>OTP via Twilio</div>
+      </div>
+      <div class="tech-col">
+        <div class="tech-col-title">Data & Infra</div>
+        <div class="tech-chip"><div class="tech-chip-dot"></div>PostgreSQL + PostGIS</div>
+        <div class="tech-chip"><div class="tech-chip-dot"></div>Redis (cache + pub/sub)</div>
+        <div class="tech-chip"><div class="tech-chip-dot"></div>AWS S3 (media storage)</div>
+        <div class="tech-chip"><div class="tech-chip-dot"></div>Cloudflare CDN</div>
+        <div class="tech-chip"><div class="tech-chip-dot"></div>Docker + PM2</div>
+        <div class="tech-chip"><div class="tech-chip-dot"></div>GitHub Actions CI/CD</div>
+      </div>
+      <div class="tech-col">
+        <div class="tech-col-title">AI & Integrations</div>
+        <div class="tech-chip"><div class="tech-chip-dot pink"></div>GPT-4o Vision API</div>
+        <div class="tech-chip"><div class="tech-chip-dot pink"></div>WhatsApp Business API</div>
+        <div class="tech-chip"><div class="tech-chip-dot pink"></div>Twilio SMS</div>
+        <div class="tech-chip"><div class="tech-chip-dot pink"></div>Razorpay Payments</div>
+        <div class="tech-chip"><div class="tech-chip-dot pink"></div>Google Maps API</div>
+        <div class="tech-chip"><div class="tech-chip-dot pink"></div>Firebase Push</div>
+      </div>
+    </div>
+
+    <h3 class="h3" style="color: var(--warm-white); margin: 3rem 0 1rem;">System layers at a glance</h3>
+    <div style="border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; position: relative; z-index: 2;">
+      <div class="arch-row" style="padding: 1.25rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <div class="arch-layer-label">Layer 1<br>Presentation</div>
+        <div class="arch-chips">
+          <span class="arch-chip">React PWA</span>
+          <span class="arch-chip">Volunteer App</span>
+          <span class="arch-chip">Admin Dashboard</span>
+          <span class="arch-chip">Reporter Interface</span>
+          <span class="arch-chip">Partner Directory</span>
+        </div>
+      </div>
+      <div class="arch-row" style="padding: 1.25rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <div class="arch-layer-label">Layer 2<br>API Gateway</div>
+        <div class="arch-chips">
+          <span class="arch-chip">REST Endpoints</span>
+          <span class="arch-chip">WebSocket Hub</span>
+          <span class="arch-chip">Auth Middleware</span>
+          <span class="arch-chip">Rate Limiting</span>
+        </div>
+      </div>
+      <div class="arch-row" style="padding: 1.25rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <div class="arch-layer-label">Layer 3<br>Core Logic</div>
+        <div class="arch-chips">
+          <span class="arch-chip">Geo-Radius Matching</span>
+          <span class="arch-chip">AI Triage Engine</span>
+          <span class="arch-chip">Alert Escalation</span>
+          <span class="arch-chip">Status Machine</span>
+          <span class="arch-chip">Live Relay</span>
+        </div>
+      </div>
+      <div class="arch-row" style="padding: 1.25rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <div class="arch-layer-label">Layer 4<br>Notifications</div>
+        <div class="arch-chips">
+          <span class="arch-chip">WhatsApp Business</span>
+          <span class="arch-chip">Twilio SMS</span>
+          <span class="arch-chip">Firebase Push</span>
+          <span class="arch-chip">Bull Job Queue</span>
+        </div>
+      </div>
+      <div class="arch-row" style="padding: 1.25rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <div class="arch-layer-label">Layer 5<br>Data</div>
+        <div class="arch-chips">
+          <span class="arch-chip">PostgreSQL + PostGIS</span>
+          <span class="arch-chip">Redis Cache</span>
+          <span class="arch-chip">AWS S3 Media</span>
+          <span class="arch-chip">Time-series Welfare Data</span>
+        </div>
+      </div>
+      <div class="arch-row" style="padding: 1.25rem 1.5rem;">
+        <div class="arch-layer-label">Layer 6<br>Intelligence</div>
+        <div class="arch-chips">
+          <span class="arch-chip">Welfare Heatmaps</span>
+          <span class="arch-chip">City Ranking Engine</span>
+          <span class="arch-chip">Gov Compliance Reports</span>
+          <span class="arch-chip">Donor Transparency Ledger</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 2rem; padding: 1.5rem 2rem; background: rgba(224,122,31,0.1); border: 1px solid rgba(224,122,31,0.2); border-radius: 12px; position: relative; z-index: 2;">
+      <p style="font-size: 0.88rem; color: rgba(255,249,242,0.7); line-height: 1.6;"><strong style="color: var(--amber-light);">The most critical technical decision:</strong> PostgreSQL + PostGIS for the database. The entire alert system depends on geo-radius queries — "find all volunteers within 5km of this coordinate." PostGIS does this natively, efficiently, and is the industry standard for exactly this kind of spatial intelligence. Every architecture decision flows from the 8-minute rescue window.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AI FEATURES ═══ -->
+<section id="ai" style="background: var(--parchment);">
+  <div class="section-wrap">
+    <div class="section-label reveal">05 — The AI Layer</div>
+    <h1 class="h1 reveal">Three technologies that close the rescue gap.</h1>
+    <p class="lead reveal">The gap between "report submitted" and "responder on the way" is where rescues fail. These three AI-powered features fill that gap — and they don't exist anywhere in animal rescue today.</p>
+
+    <div class="features-grid reveal">
+      <div class="feature-card amber">
+        <div class="feature-icon amber">🔍</div>
+        <div class="feature-title">AI Visual Triage</div>
+        <div class="feature-body">The moment someone uploads a photo or video, a multimodal vision model instantly assesses: species, visible injury type, estimated severity, whether the animal is aggressive or approachable, and safe handling guidance. In under 3 seconds the reporter gets told exactly what they're looking at and what to do while waiting. This also auto-sets urgency level — critical cases jump the queue immediately instead of being processed in order.</div>
+        <div class="feature-impact">→ GPT-4o Vision · 3-second response · Auto-triage routing</div>
+      </div>
+
+      <div class="feature-card teal">
+        <div class="feature-icon teal">📡</div>
+        <div class="feature-title">Live Relay Mode</div>
+        <div class="feature-body">Once a case is accepted, reporter and responder enter a structured live relay — not free chat, but a guided coordination layer. The system prompts the reporter: "Is the animal still in the same position? Take a fresh photo." The responder sees a live-updating case file rather than stale initial photos. If the animal moves, the reporter tracks it. This directly eliminates the single most demoralizing volunteer outcome: arriving at an empty location.</div>
+        <div class="feature-impact">→ WebSocket-powered · Guided prompts · Real-time sync</div>
+      </div>
+
+      <div class="feature-card blue">
+        <div class="feature-icon blue">🏥</div>
+        <div class="feature-title">Pre-Arrival Vet Routing</div>
+        <div class="feature-body">The moment a responder accepts a case, the system simultaneously queries nearby veterinary partners and pre-confirms an intake slot — not just alerting them, but actually locking in where the animal is going. The volunteer knows before they leave: animal goes to this vet, here is the fastest combined pickup-and-dropoff route, here is the emergency contact. Right now this happens manually after rescue, burning critical time.</div>
+        <div class="feature-impact">→ Vet API integration · Route optimization · Pre-confirmed intake</div>
+      </div>
+    </div>
+
+    <div class="definition-box reveal" style="background: #e8f5f1; border-left-color: var(--teal);">
+      <strong>Why this goes viral:</strong> "This app told me my dog had a spinal injury and exactly how to keep him still until help arrived." That story, shared by a single user, has the potential to reach millions. No rescue platform in the world currently does AI visual triage. The feature alone is enough to make Pawloft a household name in animal welfare.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VOLUNTEERS ═══ -->
+<section id="volunteers" style="background: var(--warm-white);">
+  <div class="section-wrap">
+    <div class="section-label reveal">06 — The Volunteer System</div>
+    <h1 class="h1 reveal">Intelligent matching, not mass blasting.</h1>
+    <p class="lead reveal">Pawloft's two-tier volunteer network allows case-to-responder matching based on capability, proximity, and availability — not just "who's nearest."</p>
+
+    <div class="volunteer-grid reveal">
+      <div class="tier-card">
+        <div class="tier-badge one">Level 1 · Community Volunteer</div>
+        <h3 class="h3">Lower-risk support roles</h3>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; line-height: 1.6;">Location verification, feeding support, coordination assistance, basic on-ground help. Accessible onboarding — anyone with a verified phone number and OTP can join at this level.</p>
+        <div class="capability-tags">
+          <span class="cap-tag">Location verification</span>
+          <span class="cap-tag">Feeding support</span>
+          <span class="cap-tag">Coordination</span>
+          <span class="cap-tag">Monitoring</span>
+          <span class="cap-tag">Night availability</span>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-badge two">Level 2 · Verified Rescuer / NGO Partner</div>
+        <h3 class="h3">High-impact rescue roles</h3>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; line-height: 1.6;">Serious injuries, accident cases, transport coordination, vet handoff. Requires ID verification and manual approval. These are the responders who close cases.</p>
+        <div class="capability-tags">
+          <span class="cap-tag">Serious injuries</span>
+          <span class="cap-tag">Transport</span>
+          <span class="cap-tag">Large animal handling</span>
+          <span class="cap-tag">Vet coordination</span>
+          <span class="cap-tag">Foster placement</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="h3 reveal" style="margin-top: 2rem;">Volunteer availability states</h3>
+    <div class="status-chips reveal">
+      <div class="status-chip avail"><div class="dot"></div>Available — ready for any case</div>
+      <div class="status-chip emerg"><div class="dot"></div>Emergency Only — critical cases only</div>
+      <div class="status-chip busy"><div class="dot"></div>Busy — in an active rescue</div>
+      <div class="status-chip offline"><div class="dot"></div>Offline — not available</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="section-label reveal">Animal Routing Intelligence</div>
+    <h2 class="h2 reveal">Different animals, different networks.</h2>
+
+    <table class="routing-table reveal">
+      <thead>
+        <tr>
+          <th>Animal Type</th>
+          <th>Routed To</th>
+          <th>Special Handling</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="route-animal">🐕 Dogs & Cats</div></td>
+          <td><div class="route-to">Standard volunteer pool + NGO network</div></td>
+          <td><div class="route-note">Immediate automated alert. Primary / backup responder model.</div></td>
+        </tr>
+        <tr>
+          <td><div class="route-animal">🐄 Cows & Bulls</div></td>
+          <td><div class="route-to">Gaushalas + large-animal handlers</div></td>
+          <td><div class="route-note">Backup expansion triggered immediately due to size. Specialist transport required.</div></td>
+        </tr>
+        <tr>
+          <td><div class="route-animal">🦜 Birds</div></td>
+          <td><div class="route-to">Certified bird rescue partners</div></td>
+          <td><div class="route-note">Species-specific handling protocols. Wing/fracture triage by AI.</div></td>
+        </tr>
+        <tr>
+          <td><div class="route-animal">🐱 Puppies & Kittens</div></td>
+          <td><div class="route-to">Foster network + adoption partners</div></td>
+          <td><div class="route-note">Urgency flagged high due to vulnerability. Foster pre-confirmation attempted.</div></td>
+        </tr>
+        <tr>
+          <td><div class="route-animal">🐍 Wildlife & Snakes</div></td>
+          <td><div class="route-to">Authorized wildlife handlers only</div></td>
+          <td><div class="route-note">Admin review mandatory before any alert. Never sent to untrained volunteers.</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══ FINANCIALS ═══ -->
+<section id="financials" class="fin-bg">
+  <div class="section-wrap">
+    <div class="section-label reveal">07 — Financial Model & Revenue</div>
+    <h1 class="h1 reveal">Transparent by architecture. Sustainable by design.</h1>
+    <p class="lead reveal">Donations are not Pawloft's business income. Every rupee spent is publicly visible — case ID, area, amount required, raised, spent, proof verification status.</p>
+
+    <h3 class="h3 reveal" style="margin-bottom: 0.5rem;">Rescue Fund Caps — by urgency tier</h3>
+    <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 1.5rem;" class="reveal">Financial support depends on available rescue funds and has explicit caps. Anything beyond these moves to case-specific fundraising, NGO escalation, or direct donor-to-vet payment.</p>
+
+    <div class="fund-caps reveal">
+      <div class="fund-cap-card low">
+        <div class="fund-amount">₹500</div>
+        <div class="fund-label">Low Urgency</div>
+        <div class="fund-sub">Minor injuries, stable condition, monitoring cases</div>
+      </div>
+      <div class="fund-cap-card med">
+        <div class="fund-amount">₹1,500</div>
+        <div class="fund-label">Medium Urgency</div>
+        <div class="fund-sub">Fractures, wounds, illness requiring vet visit</div>
+      </div>
+      <div class="fund-cap-card crit">
+        <div class="fund-amount">₹3,000</div>
+        <div class="fund-label">Critical Urgency</div>
+        <div class="fund-sub">Accident cases, severe trauma, emergency surgery</div>
+      </div>
+    </div>
+
+    <div style="background: var(--warm-white); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem 2rem; margin: 1rem 0;" class="reveal">
+      <p style="font-size: 0.9rem; color: var(--muted); line-height: 1.65;">Donor names can be public, anonymous, or accompanied by an Instagram shoutout. The transparency model is what makes the donation system trustworthy in an ecosystem that's been burned by fake rescue fundraisers. Every transaction is logged with case ID, area, amount required, amount raised, amount spent, and proof verification status.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2 class="h2 reveal">Revenue Streams</h2>
+    <p class="lead reveal" style="font-size: 1rem; margin-bottom: 1.5rem;">Pawloft's revenue does not depend on donations. Three stacked streams reinforce each other.</p>
+
+    <div class="revenue-streams reveal">
+      <div class="revenue-card">
+        <div class="rev-num">Stream 1</div>
+        <div class="rev-label">Freemium Partner Directory</div>
+        <div class="rev-desc">Vets, clinics, NGOs, transport providers, groomers, trainers, boarding services. Free listings get basic visibility. Paid verified listings get featured placement, a verified badge, photos, reviews, a booking button, and priority recommendation.</div>
+      </div>
+      <div class="revenue-card">
+        <div class="rev-num">Stream 2</div>
+        <div class="rev-label">Booking Commissions</div>
+        <div class="rev-desc">As the platform matures and vet appointment booking goes live, Pawloft earns a commission on every successfully booked appointment or service. Natural extension of the partner directory once volume is established.</div>
+      </div>
+      <div class="revenue-card">
+        <div class="rev-num">Stream 3</div>
+        <div class="rev-label">Government SaaS (B2G)</div>
+        <div class="rev-desc">Welfare compliance dashboards, ABC program tracking, and city-level animal health reports for municipal corporations and state governments. Priced per city monitored. The intelligence layer becomes the product.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ROADMAP ═══ -->
+<section id="roadmap" class="road-bg">
+  <div class="section-wrap">
+    <div class="section-label reveal">08 — Build Roadmap</div>
+    <h1 class="h1 reveal" style="color: var(--warm-white);">4 phases. 12 months. MVP to intelligence platform.</h1>
+    <p class="lead reveal">Built in layers. Never add complexity before the core rescue loop is proven.</p>
+
+    <div class="roadmap-phases reveal">
+      <div class="phase">
+        <div class="phase-label">Month 1–2 · Foundation</div>
+        <div class="phase-title">Core MVP</div>
+        <ul class="phase-items">
+          <li>Report form (photo + GPS + OTP)</li>
+          <li>PostgreSQL + PostGIS database</li>
+          <li>WhatsApp alert via Twilio</li>
+          <li>Basic volunteer onboarding</li>
+          <li>Case status tracking</li>
+          <li>Admin dashboard v1</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="phase-label">Month 3–4 · Connection</div>
+        <div class="phase-title">Live Relay</div>
+        <ul class="phase-items">
+          <li>WebSocket live relay system</li>
+          <li>Reporter ↔ responder coordination</li>
+          <li>Real-time case file updates</li>
+          <li>Volunteer availability states</li>
+          <li>Geo-radius auto-expansion</li>
+          <li>Proof-based case closure</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="phase-label">Month 5–6 · Intelligence</div>
+        <div class="phase-title">AI Triage</div>
+        <ul class="phase-items">
+          <li>GPT-4o Vision integration</li>
+          <li>Injury severity classification</li>
+          <li>Safe handling instructions</li>
+          <li>Auto-urgency assignment</li>
+          <li>Pre-arrival vet routing</li>
+          <li>Vet partner API integration</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="phase-label">Month 7–12 · Scale</div>
+        <div class="phase-title">Platform OS</div>
+        <ul class="phase-items">
+          <li>Donation system + Razorpay</li>
+          <li>Transparent fund ledger</li>
+          <li>Partner directory (freemium)</li>
+          <li>City welfare leaderboards</li>
+          <li>Government compliance reports</li>
+          <li>B2G dashboard v1</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="padding: 1.5rem 2rem; background: rgba(224,122,31,0.1); border: 1px solid rgba(224,122,31,0.2); border-radius: 12px; margin-top: 2rem;" class="reveal">
+      <p style="font-size: 0.88rem; color: rgba(255,249,242,0.75); line-height: 1.6;"><strong style="color: var(--amber-light);">The guiding principle:</strong> Every feature decision must be evaluated against the 8-minute rescue window. If it doesn't make that window shorter, safer, or more likely to succeed — it is not MVP. Complexity is earned, not assumed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VISION OS ═══ -->
+<section id="vision" class="vision-bg">
+  <div class="section-wrap">
+    <div class="section-label reveal">09 — Pawloft Sentience OS</div>
+    <h1 class="h1 reveal" style="color: var(--warm-white);">The intelligence layer that India's animal welfare governance runs on.</h1>
+    <p class="lead reveal">Every existing animal welfare solution is a tool. Pawloft Sentience OS is infrastructure. Tools get replaced. Infrastructure gets embedded into how governments and institutions operate — and then becomes impossible to remove.</p>
+
+    <div class="vision-pillars reveal">
+      <div class="pillar-card">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Civic Participation → National Dataset</div>
+        <div class="pillar-desc">Modeled on Aarogya Setu and CoWIN. Every person who reports an injured dog is unknowingly contributing to a national animal welfare intelligence layer. Public participation becomes the data collection engine.</div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">City Leaderboards → Public Pressure</div>
+        <div class="pillar-desc">Modeled on Zomato's hygiene scores. A city welfare ranking that updates monthly gets picked up by local press every single time. Civic performance becomes visible and emotionally resonant to ordinary people — which forces institutions to act.</div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Ground Truth → Government Intelligence</div>
+        <div class="pillar-desc">Modeled on Palantir's B2G dashboards — but the mission is compassion, not surveillance. Municipal corporations have ABC program mandates with zero data systems. Pawloft sells clarity into ground-truth animal welfare data to institutions currently flying blind.</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 3rem; padding: 2rem 2.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; position: relative; z-index: 2;" class="reveal">
+      <h3 class="h3" style="color: var(--warm-white); margin-bottom: 1rem;">Why India. Why now.</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div>
+          <p style="font-size: 0.88rem; color: rgba(255,249,242,0.6); line-height: 1.65;">The Supreme Court has been increasingly active on animal welfare. Municipal corporations are under pressure to show ABC program data. NGOs are struggling to demonstrate impact to donors who now demand proof. State governments have welfare mandates but zero data systems to execute them.</p>
+        </div>
+        <div>
+          <p style="font-size: 0.88rem; color: rgba(255,249,242,0.6); line-height: 1.65;">There is a structural vacuum, and Pawloft is perfectly positioned to fill it — because Pawloft is already generating the only real-time, ground-truth animal welfare data in the country. Every rescue report, every case closure, every verified volunteer interaction is a data point that compounds over time into an irreplaceable national dataset.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY NOW ═══ -->
+<section style="background: var(--parchment);">
+  <div class="section-wrap">
+    <div class="section-label reveal">10 — Why Now</div>
+    <h1 class="h1 reveal">Four structural tailwinds making this the right moment.</h1>
+
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <div class="why-icon">⚖️</div>
+        <div>
+          <h3 class="h3">Supreme Court Momentum</h3>
+          <p style="font-size: 0.88rem; color: var(--muted); margin-top: 0.25rem; line-height: 1.6;">India's Supreme Court has been increasingly active on animal welfare cases and institutional accountability. This creates top-down mandate pressure that Pawloft's compliance reporting directly serves.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📱</div>
+        <div>
+          <h3 class="h3">WhatsApp as Infrastructure</h3>
+          <p style="font-size: 0.88rem; color: var(--muted); margin-top: 0.25rem; line-height: 1.6;">India has 500M+ WhatsApp users. The rescue alert system is built on a channel that every volunteer, NGO, and vet already uses daily — zero adoption friction for the notification layer.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤖</div>
+        <div>
+          <h3 class="h3">Multimodal AI Maturity</h3>
+          <p style="font-size: 0.88rem; color: var(--muted); margin-top: 0.25rem; line-height: 1.6;">GPT-4o and Gemini Vision APIs can now perform reliable visual injury triage at consumer scale. Three years ago this wasn't feasible. Today it's an API call. The AI triage feature is now buildable in months, not years.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💝</div>
+        <div>
+          <h3 class="h3">Post-COVID Civic Surge</h3>
+          <p style="font-size: 0.88rem; color: var(--muted); margin-top: 0.25rem; line-height: 1.6;">Animal adoption and welfare awareness in India increased sharply post-2020. A generation of potential volunteers exists but lacks a structured platform to channel their intent into action. Pawloft is that platform.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOUNDER ═══ -->
+<section class="founder-section">
+  <div class="section-wrap narrow">
+    <div class="section-label reveal" style="color: var(--amber-light);">11 — The Founder</div>
+    <div class="founder-card reveal">
+      <div>
+        <div class="founder-avatar">SR</div>
+      </div>
+      <div>
+        <div class="founder-name" style="color: var(--warm-white);">Saanvi Rajput</div>
+        <div class="founder-title">Founder & Product Lead · Pawloft</div>
+        <p class="founder-bio">
+          Building Pawloft from scratch at 21 — which is exactly the right time. Saanvi brings the product thinking of someone who has lived with the problem firsthand: the chaos of trying to help an injured animal with no system, no contacts, and no accountability. Pawloft is built from that lived frustration into something structural.
+        </p>
+        <p class="founder-bio" style="margin-top: 1rem;">
+          Pawloft is not a weekend project. It is a systems-level product designed with architecture discipline — layer by layer, validation before complexity, ground truth before scale. The vision is to build the intelligence layer that India's animal welfare governance runs on.
+        </p>
+        <div style="margin-top: 1.5rem; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-style: italic; color: var(--amber-light);">
+          "Connecting paws with people."
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLOSING ═══ -->
+<section class="closing">
+  <h1 class="h1">The rescue OS India has been waiting for.</h1>
+  <p class="lead">Pawloft is the structured system between an injured animal's cry for help and the people who can answer it. One report. One verified alert. One closed case with proof. Scaled to every city in India.</p>
+  <a href="mailto:hello@pawloft.in" class="closing-cta">Get in touch →</a>
+</section>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

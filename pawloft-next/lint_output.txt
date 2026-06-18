@@ -1,0 +1,31 @@
+
+> pawloft-next@0.1.0 lint
+> eslint
+
+
+/home/raven/PAWLOFT_WEBSITE/pawloft-next/src/app/first-aid/page.tsx
+  13:7  warning  'EmergencyCard' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/home/raven/PAWLOFT_WEBSITE/pawloft-next/src/app/login/page.tsx
+  39:18  warning  'err' is defined but never used                                  @typescript-eslint/no-unused-vars
+  52:43  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  52:89  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  83:24  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/home/raven/PAWLOFT_WEBSITE/pawloft-next/src/app/page.tsx
+    6:23  warning  'Heart' is defined but never used                                @typescript-eslint/no-unused-vars
+    6:41  warning  'Home' is defined but never used                                 @typescript-eslint/no-unused-vars
+    6:55  warning  'Calendar' is defined but never used                             @typescript-eslint/no-unused-vars
+    6:65  warning  'Users' is defined but never used                                @typescript-eslint/no-unused-vars
+    6:72  warning  'Activity' is defined but never used                             @typescript-eslint/no-unused-vars
+  151:48  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  185:7   warning  'PawPrintIcon' is assigned a value but never used                @typescript-eslint/no-unused-vars
+
+/home/raven/PAWLOFT_WEBSITE/pawloft-next/src/app/signup/page.tsx
+  29:21   warning  'confirmPassword' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  46:18   warning  'err' is defined but never used                                  @typescript-eslint/no-unused-vars
+  59:43   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  59:119  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+✖ 16 problems (6 errors, 10 warnings)
+

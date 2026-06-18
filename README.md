@@ -1,27 +1,34 @@
-# PAWLOFT Website
+# PAWLOFT: Compassionate Luxury Rescue Network
 
-Welcome to the PAWLOFT website repository! This project is a comprehensive full-stack application dedicated to compassionate luxury and care for pets.
+Welcome to the **PAWLOFT** repository! This platform is an elite, high-utility rescue infrastructure designed to merge cinematic aesthetics with critical emergency response capabilities. 
 
-## Overview
+## Project Architecture
 
-The project is structured into three main components:
+The project has recently undergone a major architectural and aesthetic overhaul to position it as a world-class institutional rescue system.
 
-- **client/**: A legacy React application (built with Vite) that served as the project's initial frontend.
-- **pawloft-next/**: The newer, modernized React frontend built with Next.js 16 and Tailwind CSS.
-- **server/**: The backend API built with Node.js, Express, and MongoDB, handling authentication, data storage, and business logic.
+- **Frontend (pawloft-next/)**: Built with Next.js 16 (App Router), React, and Tailwind CSS. The UI features a "Compassionate Luxury" Vantara-inspired aesthetic, utilizing an Ivory, Dark Pink, and Deep Teal color palette with serif typography (`var(--font-serif)`).
+- **Backend (Supabase)**: We have migrated critical rescue infrastructure to Supabase (PostgreSQL), utilizing PostGIS for spatial data and Row Level Security (RLS) for data integrity.
+- **Legacy Systems**: 
+  - `client/`: The initial React/Vite MVP frontend.
+  - `server/`: The legacy Node/Express/MongoDB backend API.
 
-## Features
+## Core Features (V2 Redesign)
 
-- **Modern UI**: A responsive, beautifully designed frontend using Tailwind CSS and Lucide icons.
-- **Authentication**: Secure user signup and login flows powered by JWT and bcrypt.
-- **Pet Care Resources**: Sections dedicated to feeding charts, first-aid, and donation drives to support animal welfare.
+1. **Live Rescue Engine (`/report`)**
+   - **Native Camera Access:** Real-time image capture for immediate emergency triage.
+   - **Live GPS Tracking:** Integrates `navigator.geolocation` to map exact emergency coordinates.
+   - **Automated Dispatch:** Queries the live Supabase database for the closest available, verified volunteers and assigns them dynamically. Includes an expanding radius search animation (5km -> 10km -> 20km) with automatic fallback routing to Municipal Shelters.
+
+2. **Squad Infrastructure (`/dashboard`)**
+   - **Referral Network:** A custom invite-code system linking new users to established "Squads" upon Google OAuth login.
+   - **Squad Dashboard:** Visualizes your local rescue team and cumulative rescue impact metrics.
+   - **Real-Time Comms:** A glassmorphic, floating Squad Chat interface enabling direct communication between field volunteers.
 
 ## Prerequisites
 
-Before running the application, ensure you have the following installed:
-- Node.js (v18 or higher recommended)
-- npm (Node Package Manager)
-- MongoDB instance (local or Atlas)
+- Node.js (v18 or higher)
+- Supabase Project (with PostGIS enabled)
+- Google Cloud Console (for OAuth Configuration)
 
 ## Getting Started
 
@@ -31,41 +38,25 @@ Before running the application, ensure you have the following installed:
    cd PAWLOFT_WEBSITE
    ```
 
-2. **Install Top-Level Dependencies:**
+2. **Database Setup:**
+   Run the `supabase_schema.sql` script in your Supabase SQL Editor to provision the necessary tables (`users`, `cases`, `volunteers`), Enums, and RLS policies.
+
+3. **Environment Variables:**
+   Create a `.env.local` inside `pawloft-next/`:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+
+4. **Run the Next.js Client:**
    ```bash
+   cd pawloft-next
    npm install
-   ```
-   *This will install `concurrently` to run multiple environments at once.*
-
-3. **Install Component Dependencies:**
-   Follow the same process for each sub-directory to install their respective requirements:
-   ```bash
-   cd client && npm install
-   cd ../pawloft-next && npm install
-   cd ../server && npm install
-   cd ..
+   npm run dev
    ```
 
-4. **Environment Variables:**
-   You will need to set up environment variables in the `server` directory (e.g., `MONGO_URI`, `JWT_SECRET`). Create a `.env` file in the `server/` folder and add your specific configurations.
-
-## Running the Application
-
-You can start both the new Next.js frontend and the Express backend simultaneously using the provided npm scripts at the root level:
-
-```bash
-# Start both Next.js app and Express server
-npm run dev
-
-# Or to run individually:
-npm run next    # Starts just the Next.js app
-npm run server  # Starts just the Express server
-npm run legacy-client # Starts the older Vite app
-```
-
-## Technologies Used
-- Next.js (React)
-- Tailwind CSS
-- Node.js & Express
-- MongoDB & Mongoose
-- Vite (Legacy Client)
+## Technologies
+- Next.js 16 (React)
+- Tailwind CSS & Framer Motion
+- Supabase (PostgreSQL + PostGIS + Auth)
+- Lucide React (Iconography)
